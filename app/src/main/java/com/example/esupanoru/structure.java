@@ -22,9 +22,15 @@ class Fruits extends structure{
 
         japanese.put(0,"りんご");
         japanese.put(1,"みかん");
+        japanese.put(2,"いちご");
+        japanese.put(3,"パイナップル");
+        japanese.put(4,"スイカ");
 
-        spanish.put(0, "apple");
-        spanish.put(1,"orange");
+        spanish.put(0, "Manzana");
+        spanish.put(1,"Naranja");
+        spanish.put(2,"Fresa");
+        spanish.put(3,"Piña");
+        spanish.put(4,"Sandia");
     }
     String getCategoryName() {
        return this.categoryName;
@@ -32,7 +38,7 @@ class Fruits extends structure{
     public void getCount(boolean sum){
         if (sum == true){
             if (this.count<japanese.size()-1){ this.count++;}
-            if (this.count== japanese.size()-1) {this.count=0;}
+            if (this.count== japanese.size()) {this.count=0;}
         }else {
             if (this.count>0) this.count--;
         }

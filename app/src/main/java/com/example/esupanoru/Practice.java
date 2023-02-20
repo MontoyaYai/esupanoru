@@ -17,6 +17,7 @@ public class Practice extends AppCompatActivity {
 
         Fruits fruits = new Fruits();
         View next= findViewById(R.id.next);
+        View back= findViewById(R.id.back);
 
         TextView spanish= findViewById(R.id.spanishMeaning);
         TextView japanese= findViewById(R.id.japaneseMeaning);
@@ -24,13 +25,23 @@ public class Practice extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fruits.getCount(true);
                 japanese.setText(fruits.getJapanese(fruits.count));
                 spanish.setText(fruits.getSpanish(fruits.count));
+                fruits.getCount(true);
 
-                Toast.makeText(Practice.this, "aaa", Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(Practice.this, "次", Toast.LENGTH_SHORT).show();
             }
         });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                japanese.setText(fruits.getJapanese(fruits.count));
+                spanish.setText(fruits.getSpanish(fruits.count));
+                fruits.getCount(false);
+            }
+        });
+
 
     }
 }
