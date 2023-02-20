@@ -25,5 +25,14 @@ public class category extends AppCompatActivity {
                 startActivity(greetIntent);
             }
         });
+//        fruits.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent fruitsIntent= new Intent(getApplicationContext(),course.class);
+//                Fruits fruits = new Fruits();
+//                startActivity(fruitsIntent);
+//            }
+//        });
     }
+
 }
