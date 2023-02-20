@@ -7,7 +7,7 @@
     tools:context=".course">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/practice"
         android:layout_width="247dp"
         android:layout_height="249dp"
         android:layout_marginStart="82dp"
@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/renshuu" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/test"
         android:layout_width="251dp"
         android:layout_height="241dp"
         android:layout_marginStart="78dp"
@@ -29,6 +29,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/practice"
         app:srcCompat="@drawable/test" />
 </androidx.constraintlayout.widget.ConstraintLayout>
