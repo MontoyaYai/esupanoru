@@ -3,13 +3,10 @@ package com.example.esupanoru;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.sql.Struct;
 
 public class Practice extends AppCompatActivity {
 
@@ -42,7 +39,7 @@ public class Practice extends AppCompatActivity {
         View next= findViewById(R.id.next);
         View back= findViewById(R.id.back);
 
-        TextView spanish= findViewById(R.id.spanishMeaning);
+        TextView spanish= findViewById(R.id.test_question);
         TextView japanese= findViewById(R.id.japaneseMeaning);
 
         structure finalCourse = course;

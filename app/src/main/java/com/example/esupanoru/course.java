@@ -30,5 +30,13 @@ public class course extends AppCompatActivity {
                 startActivity(practiceIntent);
             }
         });
+        testImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent testIntent= new Intent(getApplicationContext(), test.class);
+                testIntent.putExtra("OPTION",option);
+                startActivity(testIntent);
+            }
+        });
     }
 }
