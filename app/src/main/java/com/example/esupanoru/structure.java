@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.*;
 
 public abstract class structure{
+    int count;
     abstract String getCategoryName();
     abstract String getJapanese(int num);
     abstract String getSpanish(int num);

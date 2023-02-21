@@ -31,15 +31,13 @@ import java.util.HashMap;
         }
 
         public void getCount(boolean sum) {
-            if (sum == true) {
-                if (this.count < japanese.size() - 1) {
-                    this.count++;
-                }
-                if (this.count == japanese.size()) {
-                    this.count = 0;
-                }
-            } else {
-                if (this.count > 0) this.count--;
+            if (sum == true){
+                if (this.count<japanese.size()-1){ this.count++;}
+                else this.count=0;
+//            if (this.count== japanese.size()) {this.count=0;}
+            }else {
+                if (this.count>0) this.count--;
+                else this.count=japanese.size()-1;
             }
         }
         @Override
