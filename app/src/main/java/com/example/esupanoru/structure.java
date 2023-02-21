@@ -39,13 +39,12 @@ class Fruits extends structure{
     public void getCount(boolean sum){
         if (sum == true){
             if (this.count<japanese.size()-1){ this.count++;}
-            if (this.count== japanese.size()) {this.count=0;}
+            else this.count=0;
+//            if (this.count== japanese.size()) {this.count=0;}
         }else {
             if (this.count>0) this.count--;
+            else this.count=japanese.size()-1;
         }
-//        getJapanese(count);
-//        getSpanish(count);
-
     }
 
     @Override
