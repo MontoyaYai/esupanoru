@@ -18,10 +18,10 @@ public class Practice extends AppCompatActivity {
         Fruits fruits = new Fruits();
         View next= findViewById(R.id.next);
         View back= findViewById(R.id.back);
-
+        //ファインドビュー設定
         TextView spanish= findViewById(R.id.spanishMeaning);
         TextView japanese= findViewById(R.id.japaneseMeaning);
-
+        //クリックリスナー
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
