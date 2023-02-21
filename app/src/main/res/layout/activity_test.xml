@@ -42,48 +42,53 @@
         app:layout_constraintTop_toBottomOf="@+id/testCard">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/answer1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="RadioButton" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/answer2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="RadioButton" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/answer3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="RadioButton" />
     </RadioGroup>
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/back_test"
         android:layout_width="80dp"
         android:layout_height="85dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="64dp"
         android:layout_marginBottom="85dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/check"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
         app:srcCompat="@drawable/back" />
 
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="82dp"
-        android:layout_height="85dp"
-        android:layout_marginStart="64dp"
+        android:id="@+id/check"
+        android:layout_width="83dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="85dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintEnd_toStartOf="@+id/next_text"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/back_test"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/check" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/next_text"
         android:layout_width="82dp"
         android:layout_height="83dp"
         android:layout_marginStart="61dp"
@@ -91,7 +96,8 @@
         android:layout_marginBottom="85dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/check"
         app:srcCompat="@drawable/next" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
