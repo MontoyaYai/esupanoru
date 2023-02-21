@@ -15,6 +15,12 @@ public class Practice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practice);
 
+        View next= findViewById(R.id.next);
+        View back= findViewById(R.id.back);
+
+        TextView spanish= findViewById(R.id.test_question);
+        TextView japanese= findViewById(R.id.japaneseMeaning);
+
         Intent intent= getIntent();
         int option= intent.getIntExtra("OPTION",0);
 
@@ -36,11 +42,7 @@ public class Practice extends AppCompatActivity {
                 break;
         }
 
-        View next= findViewById(R.id.next);
-        View back= findViewById(R.id.back);
 
-        TextView spanish= findViewById(R.id.test_question);
-        TextView japanese= findViewById(R.id.japaneseMeaning);
 
         structure finalCourse = course;
         next.setOnClickListener(new View.OnClickListener() {
