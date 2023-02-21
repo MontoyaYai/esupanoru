@@ -44,11 +44,11 @@ import java.util.HashMap;
         }
         @Override
         String getJapanese(int num) {
-            return null;
+            return japanese.get(count);
         }
 
         @Override
         String getSpanish(int num) {
-            return null;
+            return spanish.get(count);
         }
 }
