@@ -1,4 +1,6 @@
 <resources>
-    <string name="app_name">esupanoru</string>
+    <string name="app_name">えすぱにょ～る</string>
     <string name="categoty">カテゴリー</string>
+    <string name="japaneseM">Japanese Meaning</string>
+    <string name="SpanishM">Spanish Meaning</string>
 </resources>

@@ -54,7 +54,7 @@ public class Practice extends AppCompatActivity {
                 finalCourse.getCount(true);
 
 
-                Toast.makeText(Practice.this, "次", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Practice.this, "次", Toast.LENGTH_SHORT).show();
             }
         });
         back.setOnClickListener(new View.OnClickListener() {

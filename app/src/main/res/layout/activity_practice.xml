@@ -11,15 +11,14 @@
         android:layout_width="367dp"
         android:layout_height="300dp"
         android:layout_marginStart="22dp"
-        android:layout_marginTop="73dp"
+        android:layout_marginTop="49dp"
         android:layout_marginEnd="22dp"
-        android:layout_marginBottom="108dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/background"
         app:layout_constraintBottom_toTopOf="@+id/japaneseMeaning"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/spanishMeaning"
@@ -27,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_horizontal|center_vertical"
             android:gravity="center|center_horizontal|center_vertical"
-            android:text="TextView"
+            android:text="@string/SpanishM"
             android:textSize="20sp" />
     </FrameLayout>
 
@@ -35,35 +34,36 @@
         android:id="@+id/back"
         android:layout_width="115dp"
         android:layout_height="135dp"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="41dp"
-        android:layout_marginBottom="267dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginBottom="69dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/japaneseMeaning"
         app:srcCompat="@drawable/back" />
 
     <ImageView
         android:id="@+id/next"
         android:layout_width="115dp"
         android:layout_height="131dp"
-        android:layout_marginTop="41dp"
-        android:layout_marginEnd="59dp"
-        android:layout_marginBottom="271dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="68dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/japaneseMeaning"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/back"
         app:srcCompat="@drawable/next" />
 
     <TextView
         android:id="@+id/japaneseMeaning"
         android:layout_width="287dp"
         android:layout_height="46dp"
-        android:layout_marginTop="40dp"
-        android:gravity="center|center_horizontal|center_vertical"
-        android:text="TextView"
+        android:layout_marginStart="62dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="82dp"
+        android:gravity="center|center_horizontal"
+        android:text="@string/japaneseM"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/back"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/meaningCard" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
