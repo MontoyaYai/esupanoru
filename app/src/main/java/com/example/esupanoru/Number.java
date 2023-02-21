@@ -42,7 +42,6 @@ import java.util.HashMap;
                 if (this.count > 0) this.count--;
             }
         }
-
         @Override
         String getJapanese(int num) {
             return null;
