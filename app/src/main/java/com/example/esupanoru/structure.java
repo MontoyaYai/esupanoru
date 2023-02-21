@@ -7,6 +7,7 @@ public abstract class structure{
     abstract String getCategoryName();
     abstract String getJapanese(int num);
     abstract String getSpanish(int num);
+    abstract void getCount(boolean sum);
 
 }
 
