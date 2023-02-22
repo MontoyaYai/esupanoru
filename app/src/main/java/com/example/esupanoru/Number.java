@@ -70,6 +70,16 @@ import java.util.HashMap;
         }
 
         @Override
+        public HashMap getSpanishHash() {
+            return this.spanish;
+        }
+
+        @Override
+        public HashMap getJapaneseHash() {
+            return this.japanese;
+        }
+
+        @Override
         public String getJapanese(int num) {return japanese.get(count);}
 
         @Override

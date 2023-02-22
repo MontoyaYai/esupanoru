@@ -9,6 +9,9 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.HashMap;
+import java.util.Random;
+
 public class test extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +19,7 @@ public class test extends AppCompatActivity {
         setContentView(R.layout.activity_test);
 
 
-        View next= findViewById(R.id.next_test);
+//        View next= findViewById(R.id.next_test);
         View back= findViewById(R.id.back_test);
         View check= findViewById(R.id.check);
 
@@ -26,9 +29,12 @@ public class test extends AppCompatActivity {
         RadioButton ans2 = findViewById(R.id.answer2);
         RadioButton ans3 = findViewById(R.id.answer3);
 
+        TextView dataNum= findViewById(R.id.dataNum);
+
         Intent intent = getIntent(); //コースの選択　インスタンスの生成
         int option = intent.getIntExtra("OPTION",0);
 
+        Random random = new Random();
         int score=0;
 
         structure course = null;
@@ -51,7 +57,8 @@ public class test extends AppCompatActivity {
         //コースをfinalコースに格納
         structure finalCourse = course;
         testQuestion.setText(finalCourse.getJapanese(finalCourse.getCount()));
-        next.setOnClickListener(new View.OnClickListener() {
+        dataNum.setText(finalCourse.getCount()+1+"/"+ finalCourse.getJapaneseSize());
+        check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -62,22 +69,67 @@ public class test extends AppCompatActivity {
                 } else{
                     finalCourse.checkCount(true);
                     testQuestion.setText(finalCourse.getJapanese(finalCourse.getCount()));
+                    dataNum.setText(finalCourse.getCount()+1+"/"+ finalCourse.getJapaneseSize());
+
+                    String[] choices =generateChoices(finalCourse.getSpanishHash(),finalCourse.getCount(), random, finalCourse.getJapaneseSize());
+
+                    ans1.setText(choices[0]);
+                    ans2.setText(choices[1]);
+                    ans3.setText(choices[2]);
                 }
-                System.out.println(finalCourse.getJapaneseSize());
-                System.out.println(finalCourse.getCount());
+//                System.out.println(finalCourse.getJapaneseSize());
+//                System.out.println(finalCourse.getCount());
             }
         });
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testQuestion.setText(finalCourse.getJapanese(finalCourse.getCount()));
+
 
                 finalCourse.checkCount(false);
+
+                testQuestion.setText(finalCourse.getJapanese(finalCourse.getCount()));
+                dataNum.setText(finalCourse.getCount()+"/"+ finalCourse.getJapaneseSize());
+
+                String[] choices =generateChoices(finalCourse.getSpanishHash(),finalCourse.getCount(), random, finalCourse.getJapaneseSize());
+
+                ans1.setText(choices[0]);
+                ans2.setText(choices[1]);
+                ans3.setText(choices[2]);
+
+
             }
         });
 
+        String[] choices =generateChoices(finalCourse.getSpanishHash(),finalCourse.getCount(), random, finalCourse.getJapaneseSize());
+
+        ans1.setText(choices[0]);
+        ans2.setText(choices[1]);
+        ans3.setText(choices[2]);
 //        testQuestion.setText(finalCourse.getJapanese(finalCourse.getCount()));
 
-
+    }
+    String[] generateChoices(HashMap<Integer,String> hashmap, int correctAnswer, Random random, int size){
+        String [] choices=new String[3];
+        choices[0]=hashmap.get(correctAnswer);
+        while (true){
+            int n1 =random.nextInt(size);
+            int n2 = random.nextInt(size);
+            if (n1!=correctAnswer && n2!= correctAnswer && n1!=n2){
+                choices[1]=hashmap.get(n1);
+                choices[2]=hashmap.get(n2);
+                break;
+            }
+        }
+        shuffleArray(choices,random);
+        return choices;
+    }
+    void shuffleArray(String[]array, Random random){
+        for (int i =array.length-1;i>0;i--){
+            int j=random.nextInt(i);
+            String temp = array[j];
+            array [j]=array[i];
+            array[i]=temp;
+        }
     }
 }
