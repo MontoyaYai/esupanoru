@@ -49,7 +49,7 @@ public class Practice extends AppCompatActivity {
             public void onClick(View v) {
                 japanese.setText(finalCourse.getJapanese(finalCourse.count));
                 spanish.setText(finalCourse.getSpanish(finalCourse.count));
-                finalCourse.getCount(true);
+                finalCourse.checkCount(true);
 
 
 //                Toast.makeText(Practice.this, "次", Toast.LENGTH_SHORT).show();
@@ -60,7 +60,7 @@ public class Practice extends AppCompatActivity {
             public void onClick(View v) {
                 japanese.setText(finalCourse.getJapanese(finalCourse.count));
                 spanish.setText(finalCourse.getSpanish(finalCourse.count));
-                finalCourse.getCount(false);
+                finalCourse.checkCount(false);
             }
         });
         japanese.setText(finalCourse.getJapanese(finalCourse.count));

@@ -2,7 +2,7 @@ package com.example.esupanoru;
 
 import java.util.HashMap;
 
-public class Greeting extends structure {
+public class Greeting implements structure {
     int count;
     String categoryName;
     HashMap<Integer,String> japanese = new HashMap<Integer,String>(5);
@@ -24,10 +24,10 @@ public class Greeting extends structure {
         spanish.put(3,"Buenas tardes");
         spanish.put(4,"Buenas noches");
     }
-    String getCategoryName() {
+    public String getCategoryName() {
         return this.categoryName;
     }
-    public void getCount(boolean sum){
+    public void checkCount(boolean sum){
         if (sum == true){
             if (this.count<japanese.size()-1){ this.count++;}
             else this.count=0;
@@ -39,22 +39,25 @@ public class Greeting extends structure {
     }
 
     @Override
-    int getJapaneseSize() {
+    public int getCount() { return this.count; }
+
+    @Override
+    public int getJapaneseSize() {
         return this.japanese.size();
     }
 
     @Override
-    int getSpanishSize() {
+    public int getSpanishSize() {
         return this.spanish.size();
     }
 
     @Override
-    String getJapanese(int num) {
+    public String getJapanese(int num) {
         return japanese.get(count);
     }
 
     @Override
-    String getSpanish(int num) {
+    public String getSpanish(int num) {
         return spanish.get(count);
     }
 }

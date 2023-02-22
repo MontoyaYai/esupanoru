@@ -45,27 +45,33 @@ public class test extends AppCompatActivity {
         }
         //コースをfinalコースに格納
         structure finalCourse = course;
+        testQuestion.setText(finalCourse.getJapanese(finalCourse.getCount()));
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testQuestion.setText(finalCourse.getJapanese(finalCourse.count));
-                if (finalCourse.count== finalCourse.getJapaneseSize()){
-                    Intent intent = new Intent(getApplicationContext(),)
-                }
-                finalCourse.getCount(true);
 
+                if (finalCourse.getCount() == finalCourse.getJapaneseSize()-1) {
+                    Intent intent = new Intent(getApplicationContext(), score.class);
+                    intent.putExtra("SCORE", score);
+                    startActivity(intent);
+                } else{
+                    finalCourse.checkCount(true);
+                    testQuestion.setText(finalCourse.getJapanese(finalCourse.getCount()));
+                }
+                System.out.println(finalCourse.getJapaneseSize());
+                System.out.println(finalCourse.getCount());
             }
         });
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testQuestion.setText(finalCourse.getJapanese(finalCourse.count));
+                testQuestion.setText(finalCourse.getJapanese(finalCourse.getCount()));
 
-                finalCourse.getCount(false);
+                finalCourse.checkCount(false);
             }
         });
 
-        testQuestion.setText(finalCourse.getJapanese(finalCourse.count));
+//        testQuestion.setText(finalCourse.getJapanese(finalCourse.getCount()));
 
 
     }
