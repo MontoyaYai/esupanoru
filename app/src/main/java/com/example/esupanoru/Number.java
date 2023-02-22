@@ -51,10 +51,19 @@ import java.util.HashMap;
                 else this.count=japanese.size()-1;
             }
         }
+
         @Override
-        String getJapanese(int num) {
-            return japanese.get(count);
+        int getJapaneseSize() {
+            return this.japanese.size();
         }
+
+        @Override
+        int getSpanishSize() {
+            return this.spanish.size();
+        }
+
+        @Override
+        String getJapanese(int num) {return japanese.get(count);}
 
         @Override
         String getSpanish(int num) {

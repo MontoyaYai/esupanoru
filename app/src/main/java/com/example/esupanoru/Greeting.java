@@ -12,14 +12,14 @@ public class Greeting extends structure {
         this.count=0;
         this.categoryName="フルーツ";
 
-        japanese.put(0,"こんにちは");
-        japanese.put(1,"お元気ですか？");
+        japanese.put(0,"お元気ですか？");
+        japanese.put(1,"はい、元気です！");
         japanese.put(2,"おはようございます");
         japanese.put(3,"こんにちは");
         japanese.put(4,"こんばんは");
 
-        spanish.put(0, "Hola");
-        spanish.put(1,"Como estas?");
+        spanish.put(0, "Como estas?");
+        spanish.put(1,"Bien, Gracias");
         spanish.put(2,"Buenos días");
         spanish.put(3,"Buenas tardes");
         spanish.put(4,"Buenas noches");
@@ -36,6 +36,16 @@ public class Greeting extends structure {
             if (this.count>0) this.count--;
             else this.count=japanese.size()-1;
         }
+    }
+
+    @Override
+    int getJapaneseSize() {
+        return this.japanese.size();
+    }
+
+    @Override
+    int getSpanishSize() {
+        return this.spanish.size();
     }
 
     @Override

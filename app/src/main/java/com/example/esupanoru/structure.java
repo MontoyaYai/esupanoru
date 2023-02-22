@@ -4,11 +4,15 @@ import java.util.HashMap;
 import java.util.*;
 
 public abstract class structure{
+    HashMap<Integer,String> japanese = new HashMap<Integer,String>();
+    HashMap<Integer,String> spanish = new HashMap<Integer,String>();
     int count;
     abstract String getCategoryName();
     abstract String getJapanese(int num);
     abstract String getSpanish(int num);
     abstract void getCount(boolean sum);
+    abstract int getJapaneseSize();
+    abstract int getSpanishSize();
 
 }
 
@@ -46,6 +50,16 @@ class Fruits extends structure{
             if (this.count>0) this.count--;
             else this.count=japanese.size()-1;
         }
+    }
+
+    @Override
+    int getJapaneseSize() {
+        return this.japanese.size();
+    }
+
+    @Override
+    int getSpanishSize(){
+        return this.spanish.size();
     }
 
     @Override

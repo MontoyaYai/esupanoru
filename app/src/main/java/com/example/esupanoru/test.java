@@ -5,13 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class test extends AppCompatActivity {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,12 +16,16 @@ public class test extends AppCompatActivity {
 
         TextView testQuestion = findViewById(R.id.test_question);
 
-        RadioButton ans1 = findViewById(R.id.answer1);
-        RadioButton ans2 = findViewById(R.id.answer2);
-        RadioButton ans3 = findViewById(R.id.answer3);
-        Intent intent = getIntent();
-        //コースの選択　インスタンスの生成
+        View next= findViewById(R.id.next_test);
+        View back= findViewById(R.id.back_test);
+        View check= findViewById(R.id.check);
+
+
+        Intent intent = getIntent(); //コースの選択　インスタンスの生成
         int option = intent.getIntExtra("OPTION",0);
+
+        int score=0;
+
         structure course = null;
 
         switch (option){
@@ -44,8 +45,27 @@ public class test extends AppCompatActivity {
         }
         //コースをfinalコースに格納
         structure finalCourse = course;
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                testQuestion.setText(finalCourse.getJapanese(finalCourse.count));
+                if (finalCourse.count== finalCourse.getJapaneseSize()){
+                    Intent intent = new Intent(getApplicationContext(),)
+                }
+                finalCourse.getCount(true);
 
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                testQuestion.setText(finalCourse.getJapanese(finalCourse.count));
 
+                finalCourse.getCount(false);
+            }
+        });
+
+        testQuestion.setText(finalCourse.getJapanese(finalCourse.count));
 
 
     }

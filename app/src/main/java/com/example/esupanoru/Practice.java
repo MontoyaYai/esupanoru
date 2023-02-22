@@ -43,7 +43,6 @@ public class Practice extends AppCompatActivity {
         }
 
 
-
         structure finalCourse = course;
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +63,8 @@ public class Practice extends AppCompatActivity {
                 finalCourse.getCount(false);
             }
         });
+        japanese.setText(finalCourse.getJapanese(finalCourse.count));
+        spanish.setText(finalCourse.getSpanish(finalCourse.count));
 
 
     }
