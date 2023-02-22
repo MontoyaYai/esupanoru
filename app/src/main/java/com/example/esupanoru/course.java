@@ -23,6 +23,7 @@ public class course extends AppCompatActivity {
 
 
         practiceImage.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 Intent practiceIntent= new Intent(getApplicationContext(),Practice.class);
