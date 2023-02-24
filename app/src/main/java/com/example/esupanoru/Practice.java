@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ public class Practice extends AppCompatActivity {
 
         TextView spanish= findViewById(R.id.test_question);
         TextView japanese= findViewById(R.id.japaneseMeaning);
+        Button finishButton= findViewById(R.id.finishButton);
 
         Intent intent= getIntent();
         int option= intent.getIntExtra("OPTION",0);
@@ -47,10 +49,10 @@ public class Practice extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finalCourse.checkCount(true);
                 japanese.setText(finalCourse.getJapanese(finalCourse.count));
                 spanish.setText(finalCourse.getSpanish(finalCourse.count));
-                finalCourse.checkCount(true);
-
+//                finalCourse.checkCount(true);
 
 //                Toast.makeText(Practice.this, "次", Toast.LENGTH_SHORT).show();
             }
@@ -58,14 +60,21 @@ public class Practice extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finalCourse.checkCount(false);
                 japanese.setText(finalCourse.getJapanese(finalCourse.count));
                 spanish.setText(finalCourse.getSpanish(finalCourse.count));
-                finalCourse.checkCount(false);
+//                finalCourse.checkCount(false);
             }
         });
         japanese.setText(finalCourse.getJapanese(finalCourse.count));
         spanish.setText(finalCourse.getSpanish(finalCourse.count));
 
-
+        finishButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent categoryIntent = new Intent(getApplicationContext(), category.class);
+                startActivity(categoryIntent);
+            }
+        });
     }
 }
